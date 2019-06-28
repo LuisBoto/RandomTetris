@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae904a62-04bd-4d21-bce3-74c54a8ef896" name="Default Changelist" comment="" />
+    <list default="true" id="ae904a62-04bd-4d21-bce3-74c54a8ef896" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/logic/Board.js" beforeDir="false" afterPath="$PROJECT_DIR$/logic/Board.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -13,19 +15,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/logic/Board.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="32" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="32" />
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logic/BlockGenerator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
+            <state relative-caret-position="1666">
               <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
             </state>
           </provider>
@@ -57,8 +59,8 @@
       <list>
         <option value="$PROJECT_DIR$/logic/board" />
         <option value="$PROJECT_DIR$/logic/Block.js" />
-        <option value="$PROJECT_DIR$/logic/Board.js" />
         <option value="$PROJECT_DIR$/logic/BlockGenerator.js" />
+        <option value="$PROJECT_DIR$/logic/Board.js" />
       </list>
     </option>
   </component>
@@ -124,11 +126,12 @@
       <workItem from="1561728546441" duration="2000" />
       <workItem from="1561728563334" duration="2588000" />
       <workItem from="1561732489221" duration="5000" />
+      <workItem from="1561732566760" duration="561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2627000" />
+    <option name="totallyTimeSpent" value="3188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -156,13 +159,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/logic/Board.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logic/Block.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -172,8 +168,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logic/BlockGenerator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
+        <state relative-caret-position="1666">
           <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logic/Board.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
