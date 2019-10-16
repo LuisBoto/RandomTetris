@@ -6,6 +6,10 @@ class Espacio {
         this.estaticos = [];
     }
 
+    setGravedad(gravedad) {
+        this.gravedad = gravedad;
+    }
+
     agregarCuerpoDinamico(modelo) {
         this.dinamicos.push(modelo);
     }
@@ -85,7 +89,7 @@ class Espacio {
             }
             // Ya se han comprobado todos los estáticos
             this.dinamicos[i].x = this.dinamicos[i].x + movimientoPosible;
-            this.dinamicos[i].vx = movimientoPosible;
+            this.dinamicos[i].vx = 0;
         }
     }
 
@@ -124,7 +128,7 @@ class Espacio {
             }
             // Ya se han comprobado todos los estaticos
             this.dinamicos[i].x = this.dinamicos[i].x + movimientoPosible;
-            this.dinamicos[i].vx = movimientoPosible;
+            this.dinamicos[i].vx = 0;
         }
     }
 

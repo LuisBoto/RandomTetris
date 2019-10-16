@@ -24,19 +24,8 @@ function iniciarJuego() {
 
 function loop(){
     layer.actualizar();
-    if (entrada == entradas.pulsaciones) {
-        layer.calcularPulsaciones(pulsaciones);
-    }
     layer.procesarControles()
-    layer.dibujar();actualizarPulsaciones();
-}
-
-function actualizarPulsaciones () {
-    for(var i=0; i < pulsaciones.length; i++){
-        if ( pulsaciones[i].tipo == tipoPulsacion.inicio){
-            pulsaciones[i].tipo = tipoPulsacion.mantener;
-        }
-    }
+    layer.dibujar();
 }
 
 // Cambio de escalado

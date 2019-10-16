@@ -12,6 +12,7 @@ function onKeyDown( event) {
         switch ( event.keyCode ){
             case 32:
                 controles.recolectable = true;
+                controles.continuar = true;
                 break;
             case 38:
                 controles.rotar = 1;

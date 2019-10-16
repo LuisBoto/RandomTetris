@@ -85,28 +85,24 @@ class GameLayer extends Layer {
         }
 
         // disparar
-        /*if (controles.disparo) {
-            var nuevoDisparo = this.jugador.disparar();
-            if (nuevoDisparo != null) {
-                this.espacio.agregarCuerpoDinamico(nuevoDisparo);
-                this.disparosJugador.push(nuevoDisparo);
-            }
+        if (controles.recolectable) {
+           //Utilizar recolectable recogido...
+        }
+
+        if(controles.rotar == 1) {
+            this.bloqueActual.rotar();
+        }
+        if (controles.bajar == 1) {
+            //Debe caer más deprisa todas las cosas
+            this.espacio.setGravedad(60);
         }
 
         // Eje X
-        if (controles.moverX > 0) {
-            this.jugador.moverX(1);
+        if (controles.moverX > 0)
+            this.bloqueActual.vx = 30;
+         else if (controles.moverX < 0)
+            this.bloqueActual.vx = -30;
 
-        } else if (controles.moverX < 0) {
-            this.jugador.moverX(-1);
-
-        } else {
-            this.jugador.moverX(0);
-        }
-
-        // Eje Y
-        if (controles.moverY > 0)
-            this.jugador.saltar();*/
     }
 
 
