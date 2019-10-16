@@ -60,6 +60,8 @@ class Espacio {
 
     moverDerecha(i) {
         //Derecha
+        if (this.dinamicos[i].x + this.dinamicos[i].ancho/2  >= 600)
+            return; //No puede moverse pues esta en el limite
         if (this.dinamicos[i].vx > 0) {
             var movimientoPosible = this.dinamicos[i].vx;
             // El mejor "idealmente" vx partimos de ese
@@ -98,6 +100,8 @@ class Espacio {
 
     moverIzquierda(i) {
         // Izquierda
+        if (this.dinamicos[i].x - this.dinamicos[i].ancho/2  <= 300)
+            return; //No puede moverse pues esta en el limite
         if (this.dinamicos[i].vx < 0) {
             var movimientoPosible = this.dinamicos[i].vx;
             // El mejor "idealmente" vx partimos de ese
