@@ -1,9 +1,5 @@
-var pulsaciones = []; // actuales registradas
+var tocaTecho = false;
 var entradas = {}; // tipos
-entradas.pulsaciones = 1;
-entradas.teclado = 2;
-entradas.gamepad = 3;
-var entrada = entradas.pulsaciones;
 
 var tipoPulsacion = {}; // tipos
 tipoPulsacion.inicio = 1;
@@ -20,6 +16,3 @@ estados.muerto = 5;
 estados.disparando = 6;
 estados.impactado = 7;
 
-var orientaciones = {};
-orientaciones.derecha = 2;
-orientaciones.izquierda = 3;

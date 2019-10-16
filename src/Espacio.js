@@ -181,7 +181,8 @@ class Espacio {
                         // Tenemos que actualizar el movimiento posible a uno menor
                         movimientoPosible = arribaEstatico - abajoDinamico;
                         this.dinamicos[i].choqueAbajo = true;
-
+                        if (this.dinamicos[i].y == this.dinamicos[i].alto/2)
+                            tocaTecho = true;
                     }
                 }
             }

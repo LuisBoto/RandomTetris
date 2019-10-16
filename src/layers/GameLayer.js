@@ -7,6 +7,7 @@ class GameLayer extends Layer {
 
     iniciar() {
         //reproducirMusica();
+        tocaTecho = false;
         this.espacio = new Espacio(30, 25);
         this.bloqueActual = new Bloque(imagenes.bloque, 435, -15);
         this.espacio.agregarCuerpoDinamico(this.bloqueActual);
@@ -20,6 +21,8 @@ class GameLayer extends Layer {
         if (this.pausa){
             return;
         }
+        if(tocaTecho)
+            this.iniciar();
 
         this.espacio.actualizar();
 
