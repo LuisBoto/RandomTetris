@@ -129,6 +129,10 @@ class Espacio {
     }
 
     moverAbajo(i) {
+        if (this.dinamicos[i].y >= 600 - this.dinamicos[i].alto/2) {
+            this.dinamicos[i].choqueAbajo = true;
+            return; //Toca el fondo
+        }
         if (this.dinamicos[i].vy > 0) {
             var movimientoPosible = this.dinamicos[i].vy;
             // El mejor "idealmente" es la velocidad vy.
@@ -162,12 +166,6 @@ class Espacio {
                         movimientoPosible = arribaEstatico - abajoDinamico;
                         this.dinamicos[i].choqueAbajo = true;
 
-                        if (derechaDinamico <= derechaEstatico) {
-                            this.dinamicos[i].fueraPorDerecha = false;
-                        }
-                        if (izquierdaDinamico >= izquierdaEstatico) {
-                            this.dinamicos[i].fueraPorIzquierda = false;
-                        }
                     }
                 }
             }

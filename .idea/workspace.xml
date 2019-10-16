@@ -2,60 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="052241c5-8c58-4303-b394-025f3cb2096b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/0.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/asteroide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/bloque_fondo_muro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/bloque_metal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/bloque_tierra.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/boton_disparo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/boton_salto.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/copa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/corazon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/disparo_enemigo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/disparo_jugador.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/disparo_jugador2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemigo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemigo_morir.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemigo_movimiento - copia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemigo_movimiento.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/fondo_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/icono_puntos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/icono_recolectable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/icono_vidas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/jugador.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/jugador_corriendo_derecha.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/jugador_corriendo_izquierda.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/jugador_disparando_derecha.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/jugador_disparando_izquierda.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/jugador_idle_derecha.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/jugador_idle_izquierda.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/jugador_impactado_derecha.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/jugador_impactado_izquierda.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/jugador_saltando_derecha.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/jugador_saltando_izquierda.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/mensaje_como_jugar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/moneda.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/pad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/planeta_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/planeta_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/recolectable.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Espacio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Espacio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventosGamepad.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventosPulsacion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Globales.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Globales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Res.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Res.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layers/GameLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layers/GameLayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelos/DisparoJugador.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelos/Enemigo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelos/Fondo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelos/Fondo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelos/Jugador.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelos/Modelo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelos/Modelo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelos/Pad.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modelos/Bloque.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelos/Bloque.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -68,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -89,17 +38,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Espacio.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+            <state relative-caret-position="374">
+              <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/layers/GameLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+            <state relative-caret-position="476">
+              <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modelos/Bloque.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -125,7 +83,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/graficos/Animacion.js" />
-        <option value="$PROJECT_DIR$/src/modelos/Bloque.js" />
         <option value="$PROJECT_DIR$/res/0.txt" />
         <option value="$PROJECT_DIR$/res/1.txt" />
         <option value="$PROJECT_DIR$/res/3.txt" />
@@ -144,6 +101,7 @@
         <option value="$PROJECT_DIR$/src/modelos/Fondo.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/modelos/Modelo.js" />
+        <option value="$PROJECT_DIR$/src/modelos/Bloque.js" />
         <option value="$PROJECT_DIR$/src/Espacio.js" />
         <option value="$PROJECT_DIR$/src/layers/GameLayer.js" />
       </list>
@@ -230,12 +188,12 @@
       <workItem from="1570043989993" duration="6979000" />
       <workItem from="1570612193361" duration="7201000" />
       <workItem from="1571226657823" duration="61000" />
-      <workItem from="1571237691490" duration="2066000" />
+      <workItem from="1571237691490" duration="2621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18661000" />
+    <option name="totallyTimeSpent" value="19216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -382,6 +340,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelos/Bloque.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-212">
@@ -389,10 +354,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelos/Bloque.js">
+    <entry file="file://$PROJECT_DIR$/src/Espacio.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="374">
+          <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layers/GameLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -400,20 +372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Espacio.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/layers/GameLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
         </state>
       </provider>
     </entry>

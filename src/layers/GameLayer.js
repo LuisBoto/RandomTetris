@@ -9,7 +9,8 @@ class GameLayer extends Layer {
         //reproducirMusica();
 
         this.espacio = new Espacio(1);
-        this.bloqueActual = new Bloque(imagenes.bloque, 450, -30);
+        this.bloqueActual = new Bloque(imagenes.bloque, 435, -15);
+        this.espacio.agregarCuerpoDinamico(this.bloqueActual);
         this.bloques = [];
         this.fondo = new Modelo(imagenes.fondo, 900 * 0.5, 600 * 0.5);
         this.puntos = new Texto(0, 900 * 0.9, 600 * 0.07);
@@ -20,10 +21,14 @@ class GameLayer extends Layer {
         if (this.pausa){
             return;
         }
-
-        
-
         this.espacio.actualizar();
+        if (this.bloqueActual.choqueAbajo) {
+            this.espacio.eliminarCuerpoDinamico(this.bloqueActual);
+            this.espacio.agregarCuerpoEstatico(this.bloqueActual);
+            this.bloques.push(this.bloqueActual);
+            this.bloqueActual = new Bloque(imagenes.bloque, 435, -15);
+            this.espacio.agregarCuerpoDinamico(this.bloqueActual);
+        }
     }
 
     dibujar() {
@@ -31,6 +36,7 @@ class GameLayer extends Layer {
         for (var i = 0; i < this.bloques.length; i++) {
             this.bloques[i].dibujar();
         }
+        this.bloqueActual.dibujar();
 
         // HUD
         this.puntos.dibujar();
