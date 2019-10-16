@@ -35,14 +35,12 @@ class Espacio {
             // aplicar gravedad ( dinamicos)
             this.dinamicos[i].vy = this.dinamicos[i].vy + this.gravedad;
             // maxima velocidad de caida por gravedad
-            if (this.dinamicos[i].vy > 20) {
-                this.dinamicos[i].vy = 20;
+            if (this.dinamicos[i].vy > 30) {
+                this.dinamicos[i].vy = 0;
             }
 
             // reiniciar choques
             this.dinamicos[i].choqueAbajo = false;
-            this.dinamicos[i].fueraPorDerecha = true;
-            this.dinamicos[i].fueraPorIzquierda = true;
 
             this.moverDerecha(i);
             this.moverIzquierda(i);

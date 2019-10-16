@@ -10,19 +10,18 @@ class Modelo {
     }
 
     estaEnPantalla (){
-        if ( (this.x - gameLayer.scrollX)  - this.ancho/2 <= 480 &&
-            (this.x - gameLayer.scrollX)  + this.ancho/2 >= 0 &&
-            this.y - this.alto/2 <= 320 &&
+        if ( this.x  - this.ancho/2 <= 900 &&
+            (this.x)  + this.ancho/2 >= 0 &&
+            this.y - this.alto/2 <= 600 &&
             this.y + this.alto/2 >= 0 ){
             return true;
         }
         return false;
     }
 
-    dibujar (scrollX){
-        scrollX= scrollX || 0;
+    dibujar (){
         contexto.drawImage(this.imagen,
-            this.x - this.ancho /2 - scrollX,
+            this.x - this.ancho /2,
             this.y - this.alto /2);
     }
 
