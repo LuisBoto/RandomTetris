@@ -7,7 +7,6 @@ class GameLayer extends Layer {
 
     iniciar() {
         //reproducirMusica();
-
         this.espacio = new Espacio(30);
         this.bloqueActual = new Bloque(imagenes.bloque, 435, -15);
         this.espacio.agregarCuerpoDinamico(this.bloqueActual);
@@ -21,7 +20,9 @@ class GameLayer extends Layer {
         if (this.pausa){
             return;
         }
+
         this.espacio.actualizar();
+
         if (this.bloqueActual.choqueAbajo) {
             this.espacio.eliminarCuerpoDinamico(this.bloqueActual);
             this.espacio.agregarCuerpoEstatico(this.bloqueActual);
@@ -84,7 +85,6 @@ class GameLayer extends Layer {
             this.pausa = false;
         }
 
-        // disparar
         if (controles.recolectable) {
            //Utilizar recolectable recogido...
         }
@@ -93,8 +93,8 @@ class GameLayer extends Layer {
             this.bloqueActual.rotar();
         }
         if (controles.bajar == 1) {
-            //Debe caer más deprisa todas las cosas
-            this.espacio.setGravedad(60);
+            //Deben caer más deprisa todas las cosas
+            //this.espacio.setGravedad(60);
         }
 
         // Eje X
@@ -102,6 +102,7 @@ class GameLayer extends Layer {
             this.bloqueActual.vx = 30;
          else if (controles.moverX < 0)
             this.bloqueActual.vx = -30;
+        controles.moverX = 0;
 
     }
 

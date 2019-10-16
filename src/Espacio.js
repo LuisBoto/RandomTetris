@@ -4,6 +4,7 @@ class Espacio {
         this.gravedad = gravedad;
         this.dinamicos = [];
         this.estaticos = [];
+        this.iteracionesCaida = 25;
     }
 
     setGravedad(gravedad) {
@@ -35,11 +36,12 @@ class Espacio {
     }
 
     actualizar() {
+        this.iteracionesCaida--;
         for (var i = 0; i < this.dinamicos.length; i++) {
             // aplicar gravedad ( dinamicos)
             this.dinamicos[i].vy = this.dinamicos[i].vy + this.gravedad;
             // maxima velocidad de caida por gravedad
-            if (this.dinamicos[i].vy > 30) {
+            if (this.dinamicos[i].vy > this.gravedad) {
                 this.dinamicos[i].vy = 0;
             }
 
@@ -133,6 +135,11 @@ class Espacio {
     }
 
     moverAbajo(i) {
+        if (this.iteracionesCaida>=0) {
+            return; //Nothing should fall yet or game will be too fast
+        }
+        this.iteracionesCaida=25;
+
         if (this.dinamicos[i].y >= 600 - this.dinamicos[i].alto/2) {
             this.dinamicos[i].choqueAbajo = true;
             return; //Toca el fondo
