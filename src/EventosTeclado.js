@@ -11,14 +11,13 @@ function onKeyDown( event) {
         teclas.push(event.keyCode);
         switch ( event.keyCode ){
             case 32:
-                controles.disparo = true;
-                controles.continuar = true;
+                controles.recolectable = true;
                 break;
             case 38:
-                controles.moverY = 1;
+                controles.rotar = 1;
                 break;
             case 40:
-                controles.moverY = -1;
+                controles.bajar = 1;
                 break;
             case 39:
                 controles.moverX = 1;
@@ -38,17 +37,16 @@ function onKeyUp( event) {
     teclas.splice( posicion, 1);
     switch ( event.keyCode ){
         case 32:
-            controles.disparo = false;
-            controles.continuar = false;
-            break;
-        case 38:
-            if ( controles.moverY == 1 ){
-                controles.moverY = 0;
-            }
+            controles.recolectable = false;
             break;
         case 40:
-            if ( controles.moverY == -1 ){
-                controles.moverY = 0;
+            if ( controles.bajar == 1 ){
+                controles.bajar = 0;
+            }
+            break;
+        case 38:
+            if ( controles.rotar == 1 ){
+                controles.rotar= 0;
             }
             break;
         case 39:

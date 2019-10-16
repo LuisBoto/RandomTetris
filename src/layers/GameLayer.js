@@ -8,7 +8,7 @@ class GameLayer extends Layer {
     iniciar() {
         //reproducirMusica();
 
-        this.espacio = new Espacio(1);
+        this.espacio = new Espacio(30);
         this.bloqueActual = new Bloque(imagenes.bloque, 435, -15);
         this.espacio.agregarCuerpoDinamico(this.bloqueActual);
         this.bloques = [];
