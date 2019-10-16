@@ -1,14 +1,15 @@
 class Espacio {
 
-    constructor(gravedad) {
+    constructor(gravedad, iteracionesCaida) {
         this.gravedad = gravedad;
         this.dinamicos = [];
         this.estaticos = [];
-        this.iteracionesCaida = 25;
+        this.iteracionesCaida = iteracionesCaida;
+        this.maxIteracionesCaida = iteracionesCaida;
     }
 
-    setGravedad(gravedad) {
-        this.gravedad = gravedad;
+    setIteracionesCaida(iter) {
+        this.maxIteracionesCaida = iter;
     }
 
     agregarCuerpoDinamico(modelo) {
@@ -138,7 +139,7 @@ class Espacio {
         if (this.iteracionesCaida>=0) {
             return; //Nothing should fall yet or game will be too fast
         }
-        this.iteracionesCaida=25;
+        this.iteracionesCaida=this.maxIteracionesCaida;
 
         if (this.dinamicos[i].y >= 600 - this.dinamicos[i].alto/2) {
             this.dinamicos[i].choqueAbajo = true;

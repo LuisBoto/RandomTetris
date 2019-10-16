@@ -7,7 +7,7 @@ class GameLayer extends Layer {
 
     iniciar() {
         //reproducirMusica();
-        this.espacio = new Espacio(30);
+        this.espacio = new Espacio(30, 25);
         this.bloqueActual = new Bloque(imagenes.bloque, 435, -15);
         this.espacio.agregarCuerpoDinamico(this.bloqueActual);
         this.bloques = [];
@@ -94,7 +94,10 @@ class GameLayer extends Layer {
         }
         if (controles.bajar == 1) {
             //Deben caer más deprisa todas las cosas
-            //this.espacio.setGravedad(60);
+            this.espacio.setIteracionesCaida(3);
+        }
+        else if (controles.bajar==0) {
+            this.espacio.setIteracionesCaida(25);
         }
 
         // Eje X
