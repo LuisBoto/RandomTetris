@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="052241c5-8c58-4303-b394-025f3cb2096b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Espacio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Espacio.js" afterDir="false" />
-    </list>
+    <list default="true" id="052241c5-8c58-4303-b394-025f3cb2096b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -36,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Espacio.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="78" column="49" selection-start-line="78" selection-start-column="49" selection-end-line="78" selection-end-column="49" />
+            <state relative-caret-position="-1215">
+              <caret line="77" column="51" lean-forward="true" selection-start-line="77" selection-start-column="51" selection-end-line="77" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -54,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/layers/GameLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+            <state relative-caret-position="272">
+              <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -128,8 +126,8 @@
         <option value="$PROJECT_DIR$/src/modelos/Modelo.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/modelos/BloqueAleatorio.js" />
-        <option value="$PROJECT_DIR$/src/layers/GameLayer.js" />
         <option value="$PROJECT_DIR$/src/Espacio.js" />
+        <option value="$PROJECT_DIR$/src/layers/GameLayer.js" />
       </list>
     </option>
   </component>
@@ -215,12 +213,12 @@
       <workItem from="1570612193361" duration="7201000" />
       <workItem from="1571226657823" duration="61000" />
       <workItem from="1571237691490" duration="6401000" />
-      <workItem from="1571308403307" duration="5043000" />
+      <workItem from="1571308403307" duration="5354000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28039000" />
+    <option name="totallyTimeSpent" value="28350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -353,15 +351,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/layers/GameLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+        <state relative-caret-position="272">
+          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Espacio.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="78" column="49" selection-start-line="78" selection-start-column="49" selection-end-line="78" selection-end-column="49" />
+        <state relative-caret-position="-1215">
+          <caret line="77" column="51" lean-forward="true" selection-start-line="77" selection-start-column="51" selection-end-line="77" selection-end-column="51" />
         </state>
       </provider>
     </entry>
