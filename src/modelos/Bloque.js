@@ -6,8 +6,4 @@ class Bloque extends Modelo {
         this.vx = 0;
     }
 
-    rotar() {
-        //TODO: Rotacion de bloques
-    }
-
 }

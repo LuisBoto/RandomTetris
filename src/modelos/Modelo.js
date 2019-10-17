@@ -9,7 +9,7 @@ class Modelo {
         this.alto = this.imagen.height;
     }
 
-    estaEnPantalla (){
+    estaEnPantalla () {
         if ( this.x  - this.ancho/2 <= 900 &&
             (this.x)  + this.ancho/2 >= 0 &&
             this.y - this.alto/2 <= 600 &&
