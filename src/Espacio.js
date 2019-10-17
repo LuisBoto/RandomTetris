@@ -43,6 +43,18 @@ class Espacio {
             this.dinamicos[i].choqueDerecha = false;
             this.dinamicos[i].choqueIzquierda = false;
         }
+        
+        if (!this.comprobarChoqueDerecha()) {
+            for (var i = 0; i < this.dinamicos.length; i++) {
+                this.moverDerecha(i);
+            }
+        }
+
+        if (!this.comprobarChoqueIzquierda()) {
+            for (var i = 0; i < this.dinamicos.length; i++) {
+                this.moverIzquierda(i);
+            }
+        }
 
         if (!this.comprobarChoqueAbajo()) {
             for (var i = 0; i < this.dinamicos.length; i++) {
@@ -54,17 +66,6 @@ class Espacio {
                     this.dinamicos[i].vy=0;
                 }
                 this.dinamicos[i].vy = this.dinamicos[i].vy+1;
-            }
-        }
-        if (!this.comprobarChoqueDerecha()) {
-            for (var i = 0; i < this.dinamicos.length; i++) {
-                this.moverDerecha(i);
-            }
-        }
-
-        if (!this.comprobarChoqueIzquierda()) {
-            for (var i = 0; i < this.dinamicos.length; i++) {
-                this.moverIzquierda(i);
             }
         }
 
