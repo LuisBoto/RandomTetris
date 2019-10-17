@@ -37,21 +37,25 @@ class Espacio {
         }
     }
 
-    actualizar() {
+    actualizar() { // reiniciar choques
         for (var i = 0; i < this.dinamicos.length; i++) {
-            // reiniciar choques
             this.dinamicos[i].choqueAbajo = false;
-
-            this.moverArriba(i);
-            this.moverAbajo(i);
-
-            //Aumentar gravedad
-            if (this.dinamicos[i].vy > this.gravedad) {
-                this.dinamicos[i].vy=0;
-            }
-            this.dinamicos[i].vy = this.dinamicos[i].vy+1;
+            this.dinamicos[i].choqueDerecha = false;
+            this.dinamicos[i].choqueIzquierda = false;
         }
 
+        if (!this.comprobarChoqueAbajo()) {
+            for (var i = 0; i < this.dinamicos.length; i++) {
+                this.moverArriba(i);
+                this.moverAbajo(i);
+
+                //Aumentar gravedad
+                if (this.dinamicos[i].vy > this.gravedad) {
+                    this.dinamicos[i].vy=0;
+                }
+                this.dinamicos[i].vy = this.dinamicos[i].vy+1;
+            }
+        }
         if (!this.comprobarChoqueDerecha()) {
             for (var i = 0; i < this.dinamicos.length; i++) {
                 this.moverDerecha(i);
@@ -69,7 +73,6 @@ class Espacio {
     comprobarChoqueAbajo() {
         var res = false;
         for (var i = 0; i < this.dinamicos.length; i++) {
-            var movimientoPosible = 30;
             for (var j = 0; j < this.estaticos.length; j++) {
                 var arribaDinamico = this.dinamicos[i].y - this.dinamicos[i].alto / 2;
                 var abajoDinamico = this.dinamicos[i].y + this.dinamicos[i].alto / 2;
@@ -84,12 +87,11 @@ class Espacio {
                     && arribaDinamico < abajoEstatico
                     && izquierdaDinamico < derechaEstatico
                     && derechaDinamico > izquierdaEstatico) {
-                        if (movimientoPosible >= arribaEstatico - abajoDinamico) {
                             this.dinamicos[i].choqueAbajo = true;
                             if (this.dinamicos[i].y < -30)
                                 tocaTecho = true;
                             res = true;
-                        }
+
                 }
             }
         }
@@ -101,7 +103,29 @@ class Espacio {
         for (var i = 0; i < this.dinamicos.length; i++) {
             if (this.dinamicos[i].x + this.dinamicos[i].ancho/2  >= 600) {
                 this.dinamicos[i].choqueDerecha = true;
-                res = true;
+                return true;
+            }
+            for (var j = 0; j < this.estaticos.length; j++) {
+                var derechaDinamico
+                    = this.dinamicos[i].x + this.dinamicos[i].ancho / 2;
+                var arribaDinamico
+                    = this.dinamicos[i].y - this.dinamicos[i].alto / 2;
+                var abajoDinamico
+                    = this.dinamicos[i].y + this.dinamicos[i].alto / 2;
+                var izquierdaEstatico
+                    = this.estaticos[j].x - this.estaticos[j].ancho / 2;
+                var arribaEstatico
+                    = this.estaticos[j].y - this.estaticos[j].alto / 2;
+                var abajoEstatico
+                    = this.estaticos[j].y + this.estaticos[j].alto / 2;
+                // Alerta!, Elemento estático en la trayectoria.
+                if ((derechaDinamico + this.dinamicos[i].vx) >= izquierdaEstatico+1
+                    && derechaDinamico <= izquierdaEstatico
+                    && arribaEstatico < abajoDinamico
+                    && abajoEstatico > arribaDinamico) {
+                        this.dinamicos[i].choqueDerecha = true;
+                        res = true;
+                }
             }
         }
         return res;
@@ -112,7 +136,30 @@ class Espacio {
         for (var i = 0; i < this.dinamicos.length; i++) {
             if (this.dinamicos[i].x - this.dinamicos[i].ancho/2  <= 300) {
                 this.dinamicos[i].choqueDerecha = true;
-                res = true;
+                return true;
+            }
+            for (var j = 0; j < this.estaticos.length; j++) {
+                var izquierdaDinamico
+                    = this.dinamicos[i].x - this.dinamicos[i].ancho / 2;
+                var arribaDinamico
+                    = this.dinamicos[i].y - this.dinamicos[i].alto / 2;
+                var abajoDinamico
+                    = this.dinamicos[i].y + this.dinamicos[i].alto / 2;
+                var derechaEstatico
+                    = this.estaticos[j].x + this.estaticos[j].ancho / 2;
+                var arribaEstatico
+                    = this.estaticos[j].y - this.estaticos[j].alto / 2;
+                var abajoEstatico
+                    = this.estaticos[j].y + this.estaticos[j].alto / 2;
+
+                // Alerta!, Elemento estático en la trayectoria.
+                if ((izquierdaDinamico + this.dinamicos[i].vx) <= derechaEstatico-1
+                    && izquierdaDinamico >= derechaEstatico
+                    && arribaEstatico < abajoDinamico
+                    && abajoEstatico > arribaDinamico) {
+                        this.dinamicos[i].choqueIzquierda = true;
+                        res = true;
+                }
             }
         }
         return res;

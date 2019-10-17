@@ -36,7 +36,7 @@ class GameLayer extends Layer {
             this.bloqueActual.agregarDinamico(this.espacio);
         }
 
-        if (!this.espacio.comprobarChoqueAbajo())
+
             this.espacio.actualizar();
     }
 
