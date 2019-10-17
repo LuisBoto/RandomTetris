@@ -1,8 +1,7 @@
 class Modelo {
 
     constructor(imagenRuta, x, y) {
-        this.imagen = new Image();
-        this.imagen.src = imagenRuta;
+        this.imagen = cache[imagenRuta];
         this.x = x;
         this.y = y;
         this.ancho = this.imagen.width;
