@@ -6,6 +6,7 @@ var imagenes = {
     bloque3 : "res/bloque3.png",
     bloque4 : "res/bloque4.png",
     bloque5 : "res/bloque5.png",
+    bloque6 : "res/bloque6.png",
     fondo : "res/fondo.png",
     boton_pausa : "res/boton_pausa.png",
     menu_fondo : "res/menu_fondo.png",

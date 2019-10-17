@@ -2,7 +2,9 @@ class BloqueAleatorio extends Modelo {
 
     constructor(imagenRuta, x, y, size) {
         super(imagenRuta, x, y);
+        this.size=size;
         this.bloques = []; //Un bloque estara formado de bloques básicos
+        this.direcciones = [];
         this.generarForma(imagenRuta, x, y, size);
     }
 
@@ -40,6 +42,7 @@ class BloqueAleatorio extends Modelo {
                     currentx = currentx + 30;
                     currenty = currenty;
                     this.bloques.push(new Bloque(imagenRuta, currentx, currenty));
+                    this.direcciones.push(0);
                 }
             }
             if (seleccion==1) {
@@ -47,6 +50,7 @@ class BloqueAleatorio extends Modelo {
                     currentx = currentx - 30;
                     currenty = currenty;
                     this.bloques.push(new Bloque(imagenRuta, currentx, currenty));
+                    this.direcciones.push(1);
                 }
             }
             if (seleccion==2) {
@@ -54,6 +58,7 @@ class BloqueAleatorio extends Modelo {
                     currentx = currentx;
                     currenty = currenty - 30;
                     this.bloques.push(new Bloque(imagenRuta, currentx, currenty));
+                    this.direcciones.push(2);
                 }
             }
             if (seleccion==3) {
@@ -61,6 +66,7 @@ class BloqueAleatorio extends Modelo {
                     currentx = currentx;
                     currenty = currenty - 30;
                     this.bloques.push(new Bloque(imagenRuta, currentx, currenty));
+                    this.direcciones.push(3);
                 }
             }
         }
@@ -114,7 +120,20 @@ class BloqueAleatorio extends Modelo {
     }
 
     rotar() {
-        //TODO: Rotacion de bloques
+        var pivote = this.bloques[Math.floor(this.size/2)];
+        for (var i=0; i<this.bloques.length; i++) {
+            if (i==this.size/2)
+                continue;
+            else {
+                var bloque = this.bloques[i];
+                var difx = pivote.x - bloque.x;
+                var dify = pivote.y - bloque.y;
+                difx = 0 - difx;
+                bloque.x = pivote.x + difx;
+                bloque.y = pivote.y + dify;
+            }
+        }
+
     }
 }
 

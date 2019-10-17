@@ -82,7 +82,7 @@ class GameLayer extends Layer {
     cargarObjetoMapa(simbolo, x, y) {
         switch (simbolo) {
             case "B":
-                var bloque = new Bloque(imagenes.bloque, x, y);
+                var bloque = new Bloque(imagenes.bloque6, x, y);
                 bloque.y = bloque.y - bloque.alto / 2;
                 // modificación para empezar a contar desde el suelo
                 this.bloques.push(bloque);
@@ -104,6 +104,7 @@ class GameLayer extends Layer {
         if(controles.rotar == 1) {
             this.bloqueActual.rotar();
         }
+        controles.rotar = 0;
         if (controles.bajar == 1) {
             //Deben caer más deprisa todas las cosas
             this.espacio.setGravedad(5);
