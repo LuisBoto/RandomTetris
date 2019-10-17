@@ -42,8 +42,6 @@ class Espacio {
             // reiniciar choques
             this.dinamicos[i].choqueAbajo = false;
 
-            this.moverDerecha(i);
-            this.moverIzquierda(i);
             this.moverArriba(i);
             this.moverAbajo(i);
 
@@ -52,6 +50,18 @@ class Espacio {
                 this.dinamicos[i].vy=0;
             }
             this.dinamicos[i].vy = this.dinamicos[i].vy+1;
+        }
+
+        if (!this.comprobarChoqueDerecha()) {
+            for (var i = 0; i < this.dinamicos.length; i++) {
+                this.moverDerecha(i);
+            }
+        }
+
+        if (!this.comprobarChoqueIzquierda()) {
+            for (var i = 0; i < this.dinamicos.length; i++) {
+                this.moverIzquierda(i);
+            }
         }
 
     }
@@ -81,6 +91,28 @@ class Espacio {
                             res = true;
                         }
                 }
+            }
+        }
+        return res;
+    }
+
+    comprobarChoqueDerecha() {
+        var res = false;
+        for (var i = 0; i < this.dinamicos.length; i++) {
+            if (this.dinamicos[i].x + this.dinamicos[i].ancho/2  >= 600) {
+                this.dinamicos[i].choqueDerecha = true;
+                res = true;
+            }
+        }
+        return res;
+    }
+
+    comprobarChoqueIzquierda() {
+        var res = false;
+        for (var i = 0; i < this.dinamicos.length; i++) {
+            if (this.dinamicos[i].x - this.dinamicos[i].ancho/2  <= 300) {
+                this.dinamicos[i].choqueDerecha = true;
+                res = true;
             }
         }
         return res;
