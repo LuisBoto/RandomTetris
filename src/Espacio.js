@@ -1,15 +1,16 @@
 class Espacio {
 
-    constructor(gravedad, iteracionesCaida) {
+    constructor(gravedad) {
+        //A mas baja gravedad, más rapido caerán los bloques
+        //La gravedad representa mas bien la iteraciones minimas de caida, que una
+        //gravedad al uso
         this.gravedad = gravedad;
         this.dinamicos = [];
         this.estaticos = [];
-        this.iteracionesCaida = iteracionesCaida;
-        this.maxIteracionesCaida = iteracionesCaida;
     }
 
-    setIteracionesCaida(iter) {
-        this.maxIteracionesCaida = iter;
+    setGravedad(g) {
+        this.gravedad = g;
     }
 
     agregarCuerpoDinamico(modelo) {
@@ -37,15 +38,7 @@ class Espacio {
     }
 
     actualizar() {
-        this.iteracionesCaida--;
         for (var i = 0; i < this.dinamicos.length; i++) {
-            // aplicar gravedad ( dinamicos)
-            this.dinamicos[i].vy = this.dinamicos[i].vy + this.gravedad;
-            // maxima velocidad de caida por gravedad
-            if (this.dinamicos[i].vy > this.gravedad) {
-                this.dinamicos[i].vy = 0;
-            }
-
             // reiniciar choques
             this.dinamicos[i].choqueAbajo = false;
 
@@ -54,6 +47,11 @@ class Espacio {
             this.moverArriba(i);
             this.moverAbajo(i);
 
+            //Aumentar gravedad
+            if (this.dinamicos[i].vy > this.gravedad) {
+                this.dinamicos[i].vy=0;
+            }
+            this.dinamicos[i].vy = this.dinamicos[i].vy+1;
         }
 
     }
@@ -140,17 +138,13 @@ class Espacio {
     }
 
     moverAbajo(i) {
-        if (this.iteracionesCaida>=0) {
-            return; //Nothing should fall yet or game will be too fast
-        }
-        this.iteracionesCaida=this.maxIteracionesCaida;
-
         if (this.dinamicos[i].y >= 600 - this.dinamicos[i].alto/2) {
             this.dinamicos[i].choqueAbajo = true;
-            return; //Toca el fondo
+            return; //Toca el fondo y no debe moverse mas (pasara a estatico en GameLayer)
         }
-        if (this.dinamicos[i].vy > 0) {
-            var movimientoPosible = this.dinamicos[i].vy;
+        if (this.dinamicos[i].vy == this.gravedad) {
+            //Siempre nos moveremos solamente una casilla
+            var movimientoPosible = 30;
             // El mejor "idealmente" es la velocidad vy.
             for (var j = 0; j < this.estaticos.length; j++) {
                 var arribaDinamico
@@ -181,14 +175,14 @@ class Espacio {
                         // Tenemos que actualizar el movimiento posible a uno menor
                         movimientoPosible = arribaEstatico - abajoDinamico;
                         this.dinamicos[i].choqueAbajo = true;
-                        if (this.dinamicos[i].y == this.dinamicos[i].alto/2)
+                        if (this.dinamicos[i].y == this.dinamicos[i].alto/2+30)
                             tocaTecho = true;
                     }
                 }
             }
             // Ya se han comprobado todos los estáticos
             this.dinamicos[i].y = this.dinamicos[i].y + movimientoPosible;
-            this.dinamicos[i].vy = movimientoPosible;
+            this.dinamicos[i].vy = 0;
         }
     }
 
