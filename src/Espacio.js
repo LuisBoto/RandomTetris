@@ -43,7 +43,7 @@ class Espacio {
             this.dinamicos[i].choqueDerecha = false;
             this.dinamicos[i].choqueIzquierda = false;
         }
-        
+
         if (!this.comprobarChoqueDerecha()) {
             for (var i = 0; i < this.dinamicos.length; i++) {
                 this.moverDerecha(i);

@@ -1,8 +1,12 @@
 // Lista re recursos a precargar
 var cache = [];
 var imagenes = {
+    bloque1 : "res/bloque1.png",
+    bloque2 : "res/bloque2.png",
+    bloque3 : "res/bloque3.png",
+    bloque4 : "res/bloque4.png",
+    bloque5 : "res/bloque5.png",
     fondo : "res/fondo.png",
-    bloque : "res/bloque.png",
     boton_pausa : "res/boton_pausa.png",
     menu_fondo : "res/menu_fondo.png",
     boton_jugar : "res/boton_jugar.png",

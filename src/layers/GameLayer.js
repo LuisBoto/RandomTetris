@@ -9,7 +9,7 @@ class GameLayer extends Layer {
         //reproducirMusica();
         tocaTecho = false;
         this.espacio = new Espacio(25);
-        this.bloqueActual = new BloqueAleatorio(imagenes.bloque, 435, -15, 5);
+        this.bloqueActual = this.generarBloque();
         //this.espacio.agregarCuerpoDinamico(this.bloqueActual);
         this.bloqueActual.agregarDinamico(this.espacio);
         this.bloques = [];
@@ -31,13 +31,17 @@ class GameLayer extends Layer {
             this.bloqueActual.eliminarDinamico(this.espacio);
             this.bloqueActual.agregarEstatico(this.espacio);
             this.bloques.push(this.bloqueActual);
-            this.bloqueActual = new BloqueAleatorio(imagenes.bloque, 435, -15, 5);
+            this.bloqueActual = this.generarBloque();
             //this.espacio.agregarCuerpoDinamico(this.bloqueActual);
             this.bloqueActual.agregarDinamico(this.espacio);
         }
 
-
             this.espacio.actualizar();
+    }
+
+    generarBloque() {
+        var seleccion = Math.floor(Math.random() * 5);
+        return new BloqueAleatorio(rutasImagenes[seleccion],435, -15, 5);
     }
 
     dibujar() {
