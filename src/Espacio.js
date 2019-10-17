@@ -56,6 +56,33 @@ class Espacio {
 
     }
 
+    comprobarChoqueAbajo() {
+        for (var i = 0; i < this.dinamicos.length; i++) {
+            var movimientoPosible = 30;
+            for (var j = 0; j < this.estaticos.length; j++) {
+                var arribaDinamico = this.dinamicos[i].y - this.dinamicos[i].alto / 2;
+                var abajoDinamico = this.dinamicos[i].y + this.dinamicos[i].alto / 2;
+                var derechaDinamico = this.dinamicos[i].x + this.dinamicos[i].ancho / 2;
+                var izquierdaDinamico = this.dinamicos[i].x - this.dinamicos[i].ancho / 2;
+                var arribaEstatico = this.estaticos[j].y - this.estaticos[j].alto / 2;
+                var abajoEstatico = this.estaticos[j].y + this.estaticos[j].alto / 2;
+                var derechaEstatico = this.estaticos[j].x + this.estaticos[j].ancho / 2;
+                var izquierdaEstatico = this.estaticos[j].x - this.estaticos[j].ancho / 2;
+
+                if ((abajoDinamico + this.dinamicos[i].vy) >= arribaEstatico
+                    && arribaDinamico < abajoEstatico
+                    && izquierdaDinamico < derechaEstatico
+                    && derechaDinamico > izquierdaEstatico) {
+                        if (movimientoPosible >= arribaEstatico - abajoDinamico) {
+                            this.dinamicos[i].choqueAbajo = true;
+                            return true;
+                        }
+                }
+            }
+        }
+        return false;
+    }
+
     moverDerecha(i) {
         //Derecha
         if (this.dinamicos[i].x + this.dinamicos[i].ancho/2  >= 600)
@@ -172,8 +199,7 @@ class Espacio {
                     // que nuestro movimientoPosible actual
                     if (movimientoPosible >= arribaEstatico - abajoDinamico) {
                         // La distancia es MENOR que nuestro movimiento posible
-                        // Tenemos que actualizar el movimiento posible a uno menor
-                        movimientoPosible = arribaEstatico - abajoDinamico;
+                        movimientoPosible = 0;
                         this.dinamicos[i].choqueAbajo = true;
                         if (this.dinamicos[i].y == this.dinamicos[i].alto/2+30)
                             tocaTecho = true;

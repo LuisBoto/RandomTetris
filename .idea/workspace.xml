@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="052241c5-8c58-4303-b394-025f3cb2096b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/res/bloque.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/bloque.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelos/Bloque.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelos/Bloque.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelos/Modelo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelos/Modelo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Espacio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Espacio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layers/GameLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layers/GameLayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modelos/BloqueAleatorio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelos/BloqueAleatorio.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+            <state relative-caret-position="476">
+              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -35,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Espacio.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-799">
-              <caret line="4" column="74" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
+            <state relative-caret-position="468">
+              <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -53,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/layers/GameLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1683">
-              <caret line="99" column="38" selection-start-line="99" selection-start-column="38" selection-end-line="99" selection-end-column="38" />
+            <state relative-caret-position="357">
+              <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -65,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modelos/BloqueAleatorio.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="876">
-              <caret line="59" column="94" selection-start-line="59" selection-start-column="94" selection-end-line="59" selection-end-column="94" />
+            <state relative-caret-position="315">
+              <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -122,16 +124,16 @@
         <option value="$PROJECT_DIR$/src/modelos/Enemigo.js" />
         <option value="$PROJECT_DIR$/src/Res.js" />
         <option value="$PROJECT_DIR$/src/modelos/Fondo.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/layers/MenuLayer.js" />
         <option value="$PROJECT_DIR$/src/EventosTeclado.js" />
         <option value="$PROJECT_DIR$/Main.js" />
         <option value="$PROJECT_DIR$/src/Globales.js" />
-        <option value="$PROJECT_DIR$/src/Espacio.js" />
-        <option value="$PROJECT_DIR$/src/layers/GameLayer.js" />
         <option value="$PROJECT_DIR$/src/modelos/Bloque.js" />
         <option value="$PROJECT_DIR$/src/modelos/Modelo.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/modelos/BloqueAleatorio.js" />
+        <option value="$PROJECT_DIR$/src/layers/GameLayer.js" />
+        <option value="$PROJECT_DIR$/src/Espacio.js" />
       </list>
     </option>
   </component>
@@ -217,12 +219,12 @@
       <workItem from="1570612193361" duration="7201000" />
       <workItem from="1571226657823" duration="61000" />
       <workItem from="1571237691490" duration="6401000" />
-      <workItem from="1571308403307" duration="2487000" />
+      <workItem from="1571308403307" duration="4708000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25483000" />
+    <option name="totallyTimeSpent" value="27704000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -311,20 +313,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/EventosTeclado.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -346,24 +334,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Espacio.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-799">
-          <caret line="4" column="74" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
+        <state relative-caret-position="476">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modelos/BloqueAleatorio.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="876">
-          <caret line="59" column="94" selection-start-line="59" selection-start-column="94" selection-end-line="59" selection-end-column="94" />
+        <state relative-caret-position="315">
+          <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/layers/GameLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="99" column="38" selection-start-line="99" selection-start-column="38" selection-end-line="99" selection-end-column="38" />
+        <state relative-caret-position="357">
+          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Espacio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
         </state>
       </provider>
     </entry>

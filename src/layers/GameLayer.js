@@ -9,8 +9,9 @@ class GameLayer extends Layer {
         //reproducirMusica();
         tocaTecho = false;
         this.espacio = new Espacio(25);
-        this.bloqueActual = new Bloque(imagenes.bloque, 435, -15);
-        this.espacio.agregarCuerpoDinamico(this.bloqueActual);
+        this.bloqueActual = new BloqueAleatorio(imagenes.bloque, 435, -15, 5);
+        //this.espacio.agregarCuerpoDinamico(this.bloqueActual);
+        this.bloqueActual.agregarDinamico(this.espacio);
         this.bloques = [];
         this.fondo = new Modelo(imagenes.fondo, 900 * 0.5, 600 * 0.5);
         this.puntos = new Texto(0, 900 * 0.9, 600 * 0.07);
@@ -24,15 +25,19 @@ class GameLayer extends Layer {
         if(tocaTecho)
             this.iniciar();
 
-        this.espacio.actualizar();
-
-        if (this.bloqueActual.choqueAbajo) {
-            this.espacio.eliminarCuerpoDinamico(this.bloqueActual);
-            this.espacio.agregarCuerpoEstatico(this.bloqueActual);
+        if (this.bloqueActual.choqueAbajo()) {
+            //this.espacio.eliminarCuerpoDinamico(this.bloqueActual);
+            //this.espacio.agregarCuerpoEstatico(this.bloqueActual);
+            this.bloqueActual.eliminarDinamico(this.espacio);
+            this.bloqueActual.agregarEstatico(this.espacio);
             this.bloques.push(this.bloqueActual);
-            this.bloqueActual = new Bloque(imagenes.bloque, 435, -15);
-            this.espacio.agregarCuerpoDinamico(this.bloqueActual);
+            this.bloqueActual = new BloqueAleatorio(imagenes.bloque, 435, -15, 5);
+            //this.espacio.agregarCuerpoDinamico(this.bloqueActual);
+            this.bloqueActual.agregarDinamico(this.espacio);
         }
+
+        if (!this.espacio.comprobarChoqueAbajo())
+            this.espacio.actualizar();
     }
 
     dibujar() {
@@ -105,9 +110,9 @@ class GameLayer extends Layer {
 
         // Eje X
         if (controles.moverX > 0)
-            this.bloqueActual.vx = 30;
+            this.bloqueActual.setVX(30);
          else if (controles.moverX < 0)
-            this.bloqueActual.vx = -30;
+            this.bloqueActual.setVX(-30);
         controles.moverX = 0;
 
     }
