@@ -57,6 +57,7 @@ class Espacio {
     }
 
     comprobarChoqueAbajo() {
+        var res = false;
         for (var i = 0; i < this.dinamicos.length; i++) {
             var movimientoPosible = 30;
             for (var j = 0; j < this.estaticos.length; j++) {
@@ -75,12 +76,14 @@ class Espacio {
                     && derechaDinamico > izquierdaEstatico) {
                         if (movimientoPosible >= arribaEstatico - abajoDinamico) {
                             this.dinamicos[i].choqueAbajo = true;
-                            return true;
+                            if (this.dinamicos[i].y < -30)
+                                tocaTecho = true;
+                            res = true;
                         }
                 }
             }
         }
-        return false;
+        return res;
     }
 
     moverDerecha(i) {
@@ -201,8 +204,6 @@ class Espacio {
                         // La distancia es MENOR que nuestro movimiento posible
                         movimientoPosible = 0;
                         this.dinamicos[i].choqueAbajo = true;
-                        if (this.dinamicos[i].y == this.dinamicos[i].alto/2+30)
-                            tocaTecho = true;
                     }
                 }
             }
