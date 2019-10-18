@@ -36,6 +36,12 @@ class BloqueAleatorio extends Modelo {
         var currentx = x;
         var currenty = y;
         for (var i=0; this.bloques.length<size; i++) {
+            //Seleccionamos un bloque al azar existente
+            seleccion = Math.floor(Math.random() * this.bloques.length);
+            var bloque = this.bloques[seleccion];
+            currentx = bloque.x;
+            currenty = bloque.y;
+            //Seleccionamos una dirección al azar y colocamos un bloque si no hay ahi
             seleccion = Math.floor(Math.random() * 4);
             if (seleccion==0) {
                 if (currentx+30 < 600 && !this.comprobarExisteBloque(currentx + 30, currenty)) {
@@ -71,6 +77,7 @@ class BloqueAleatorio extends Modelo {
             }
         }
     }
+    
 
     comprobarExisteBloque(x, y) {
         for (var i=0; i<this.bloques.length; i++) {
