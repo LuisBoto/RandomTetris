@@ -77,7 +77,7 @@ class BloqueAleatorio extends Modelo {
             }
         }
     }
-    
+
 
     comprobarExisteBloque(x, y) {
         for (var i=0; i<this.bloques.length; i++) {

@@ -26,17 +26,44 @@ class GameLayer extends Layer {
             this.iniciar();
 
         if (this.bloqueActual.choqueAbajo()) {
-            //this.espacio.eliminarCuerpoDinamico(this.bloqueActual);
-            //this.espacio.agregarCuerpoEstatico(this.bloqueActual);
             this.bloqueActual.eliminarDinamico(this.espacio);
             this.bloqueActual.agregarEstatico(this.espacio);
-            this.bloques.push(this.bloqueActual);
+            for (var i=0; i<this.bloqueActual.bloques.length; i++)
+                this.bloques.push(this.bloqueActual.bloques[i]);
             this.bloqueActual = this.generarBloque();
-            //this.espacio.agregarCuerpoDinamico(this.bloqueActual);
             this.bloqueActual.agregarDinamico(this.espacio);
         }
 
-            this.espacio.actualizar();
+        this.espacio.actualizar();
+
+        this.buscarLineas();
+    }
+
+    buscarLineas() {
+        var contador = 0;
+        for (var j=0; j<20; j++) {
+            for (var i=0; i<this.bloques.length; i++) {
+                if (this.bloques[i].y == j*30+15)
+                    contador++;
+            }
+            if(contador==10) {
+                //Eliminamos linea de bloques
+                for (var i=0; i<this.bloques.length; i++) {
+                    if (this.bloques[i].y==j*30+15) {
+                        this.espacio.eliminarCuerpoEstatico(this.bloques[i]);
+                        this.bloques.splice(i, 1);
+                        i=i-1;
+                    }
+                }
+                //Movemos todos los bloques superiores una fila hacia abajo
+                for (var i=0; i<this.bloques.length; i++) {
+                    if (this.bloques[i].y < j*30+15) {
+                        this.bloques[i].y=this.bloques[i].y+30;
+                    }
+                }
+            }
+            contador=0;
+        }
     }
 
     generarBloque() {
