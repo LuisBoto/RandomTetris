@@ -19,6 +19,5 @@ class MenuLayer extends Layer {
 
     dibujar (){
         this.fondo.dibujar();
-        this.boton.dibujar();
     }
 }
