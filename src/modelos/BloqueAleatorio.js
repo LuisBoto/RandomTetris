@@ -139,9 +139,9 @@ class BloqueAleatorio extends Modelo {
         var ybloque = pivote.y;
         pivote.x = -ybloque;
         pivote.y = xbloque;
-        
+
         var correccionx = xoriginal+yoriginal;
-        var correcciony = -yoriginal;
+        var correcciony = -(xoriginal-yoriginal);
         pivote.x = pivote.x+correccionx;
         pivote.y = pivote.y+correcciony;
 
