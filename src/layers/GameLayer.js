@@ -13,8 +13,12 @@ class GameLayer extends Layer {
         //this.espacio.agregarCuerpoDinamico(this.bloqueActual);
         this.bloqueActual.agregarDinamico(this.espacio);
         this.bloques = [];
+        this.score = 0;
+        this.lines = 0;
         this.fondo = new Modelo(imagenes.fondo, 900 * 0.5, 600 * 0.5);
-        this.puntos = new Texto(0, 900 * 0.9, 600 * 0.07);
+        this.puntos = new Texto(this.score, 765, 30*14+15/2);
+        this.lineas = new Texto(this.lines, 765, 30*6+15/2);
+        this.level = new Texto(nivelActual,135,30*8+15/2);
         this.cargarMapa("./res/"+nivelActual+".txt");
     }
 
@@ -47,6 +51,10 @@ class GameLayer extends Layer {
                     contador++;
             }
             if(contador==10) {
+                this.score = this.score + 100;
+                this.lines = this.lines+1;
+                this.puntos.setValor(this.score);
+                this.lineas.setValor(this.lines);
                 //Eliminamos linea de bloques
                 for (var i=0; i<this.bloques.length; i++) {
                     if (this.bloques[i].y==j*30+15) {
@@ -82,6 +90,8 @@ class GameLayer extends Layer {
 
         // HUD
         this.puntos.dibujar();
+        this.lineas.dibujar();
+        this.level.dibujar();
         if ( this.pausa ) {
             this.mensaje.dibujar();
         }

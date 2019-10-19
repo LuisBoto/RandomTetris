@@ -184,23 +184,20 @@ class BloqueAleatorio extends Modelo {
             if (this.bloques[i].x<300) {
                 //Recolocar bloque completo
                 for (var i=0; i<this.bloques.length; i++) {
-                    this.bloques[i].x+=30;
+                    this.bloques[i].x=this.bloques[i].x+30;
                 }
-                continue;
             }
             if (this.bloques[i].x>600) {
                 //Recolocar bloque completo
                 for (var i=0; i<this.bloques.length; i++) {
-                    this.bloques[i].x-=30;
+                    this.bloques[i].x=this.bloques[i].x-30;
                 }
-                continue;
             }
             if (this.bloques[i].y>600) {
                 //Recolocar bloque completo
                 for (var i=0; i<this.bloques.length; i++) {
-                    this.bloques[i].y-=30;
+                    this.bloques[i].y=this.bloques[i].y-30;
                 }
-                continue;
             }
         }
 
