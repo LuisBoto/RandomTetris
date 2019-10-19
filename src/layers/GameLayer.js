@@ -7,6 +7,7 @@ class GameLayer extends Layer {
 
     iniciar() {
         //reproducirMusica();
+        this.limitScore = 300*nivelActual+1;
         tocaTecho = false;
         this.espacio = new Espacio(25);
         this.bloqueActual = this.generarBloque();
@@ -23,11 +24,19 @@ class GameLayer extends Layer {
     }
 
     actualizar() {
+        if (this.score>= this.limitScore) {
+            nivelActual = nivelActual+1;
+            if (nivelActual>nivelMaximo)
+                nivelActual = 0;
+            this.iniciar();
+        }
         if (this.pausa){
             return;
         }
-        if(tocaTecho)
+        if(tocaTecho) {
+            nivelActual = 0;
             this.iniciar();
+        }
 
         if (this.bloqueActual.choqueAbajo()) {
             this.bloqueActual.eliminarDinamico(this.espacio);
