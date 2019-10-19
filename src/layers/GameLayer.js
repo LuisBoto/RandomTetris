@@ -7,7 +7,7 @@ class GameLayer extends Layer {
 
     iniciar() {
         //reproducirMusica();
-        this.limitScore = 300*nivelActual+1;
+        this.limitScore = 500*(nivelActual+1);
         tocaTecho = false;
         this.espacio = new Espacio(25);
         this.bloqueActual = this.generarBloque();
@@ -38,6 +38,15 @@ class GameLayer extends Layer {
             this.iniciar();
         }
 
+        for (var i =0; i<this.bloques.length; i++) {
+            this.bloques[i].actualizar();
+            if (this.bloques[i].estado == estados.destruido) {
+                this.espacio.eliminarCuerpoEstatico(this.bloques[i]);
+                this.bloques.splice(i, 1);
+                i=i-1;
+            }
+        }
+
         if (this.bloqueActual.choqueAbajo()) {
             this.bloqueActual.eliminarDinamico(this.espacio);
             this.bloqueActual.agregarEstatico(this.espacio);
@@ -56,7 +65,7 @@ class GameLayer extends Layer {
         var contador = 0;
         for (var j=0; j<20; j++) {
             for (var i=0; i<this.bloques.length; i++) {
-                if (this.bloques[i].y == j*30+15)
+                if (this.bloques[i].y == j*30+15 && this.bloques[i].estado==estados.normal)
                     contador++;
             }
             if(contador==10) {
@@ -66,10 +75,8 @@ class GameLayer extends Layer {
                 this.lineas.setValor(this.lines);
                 //Eliminamos linea de bloques
                 for (var i=0; i<this.bloques.length; i++) {
-                    if (this.bloques[i].y==j*30+15) {
-                        this.espacio.eliminarCuerpoEstatico(this.bloques[i]);
-                        this.bloques.splice(i, 1);
-                        i=i-1;
+                    if (this.bloques[i].y==j*30+15 && this.bloques[i].estado==estados.normal) {
+                        this.bloques[i].estado = estados.destruyendo;
                     }
                 }
                 //Movemos todos los bloques superiores una fila hacia abajo

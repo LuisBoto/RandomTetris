@@ -9,5 +9,7 @@ var nivelActual = 0;
 var nivelMaximo = 3;
 
 var estados = {};
-
+estados.normal = 0;
+estados.destruyendo = 1;
+estados.destruido = 2;
 
