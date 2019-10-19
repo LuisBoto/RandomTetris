@@ -15,7 +15,7 @@ class GameLayer extends Layer {
         this.bloques = [];
         this.fondo = new Modelo(imagenes.fondo, 900 * 0.5, 600 * 0.5);
         this.puntos = new Texto(0, 900 * 0.9, 600 * 0.07);
-        this.cargarMapa("res/"+nivelActual+".txt");
+        this.cargarMapa("./res/"+nivelActual+".txt");
     }
 
     actualizar() {

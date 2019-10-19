@@ -89,7 +89,7 @@ class Espacio {
                     && izquierdaDinamico < derechaEstatico
                     && derechaDinamico > izquierdaEstatico) {
                             this.dinamicos[i].choqueAbajo = true;
-                            if (this.dinamicos[i].y < -30)
+                            if (this.estaticos[j].y < -30)
                                 tocaTecho = true;
                             res = true;
 

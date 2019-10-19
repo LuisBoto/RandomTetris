@@ -127,18 +127,46 @@ class BloqueAleatorio extends Modelo {
     }
 
     rotar() {
+        var xoriginal;
+        var yoriginal;
         var pivote = this.bloques[Math.floor(this.size/2)];
+
+        //Calcularemos el pivote antes
+        xoriginal = pivote.x;
+        yoriginal = pivote.y;
+        //IMPORTANTE usar estas variables
+        var xbloque = pivote.x;
+        var ybloque = pivote.y;
+        pivote.x = -ybloque;
+        pivote.y = xbloque;
+        
+        var correccionx = xoriginal+yoriginal;
+        var correcciony = -yoriginal;
+        pivote.x = pivote.x+correccionx;
+        pivote.y = pivote.y+correcciony;
+
         for (var i=0; i<this.bloques.length; i++) {
-            if (i==this.size/2)
+            if (i==Math.floor(this.size/2))
                 continue;
-            else {
-                var bloque = this.bloques[i];
-                var difx = pivote.x - bloque.x;
-                var dify = pivote.y - bloque.y;
-                difx = 0 - difx;
-                bloque.x = pivote.x + difx;
-                bloque.y = pivote.y + dify;
-            }
+
+            xoriginal = this.bloques[i].x;
+            yoriginal = this.bloques[i].y;
+            var xbloque = this.bloques[i].x;
+            var ybloque = this.bloques[i].y;
+
+            this.bloques[i].x = -ybloque;
+            this.bloques[i].y = xbloque;
+
+            this.bloques[i].x = this.bloques[i].x+correccionx;
+            this.bloques[i].y = this.bloques[i].y+correcciony;
+        }
+
+        //Corrección de ajuste a cuadrícula
+        for (var i=0; i<this.bloques.length; i++) {
+            if (this.bloques[i].x%15!=0)
+                this.bloques[i].x = this.bloques[i].x+15;
+            if (this.bloques[i].y%30==0) {
+                this.bloques[i].y = this.bloques[i].y-15;}
         }
 
     }
