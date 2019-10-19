@@ -94,7 +94,10 @@ class GameLayer extends Layer {
 
     generarBloque() {
         var seleccion = Math.floor(Math.random() * 5);
-        return new BloqueAleatorio(rutasImagenes[seleccion],435, -15, 5);
+        var tam=4;
+        if(Math.random() >= 0.5)
+            tam = 5;
+        return new BloqueAleatorio(rutasImagenes[seleccion],435, -15, tam);
     }
 
     dibujar() {
