@@ -2,6 +2,7 @@ class BloqueAleatorio extends Modelo {
 
     constructor(imagenRuta, x, y, size) {
         super(imagenRuta, x, y);
+        this.imagenRuta = imagenRuta;
         this.size=size;
         this.bloques = []; //Un bloque estara formado de bloques básicos
         this.direcciones = [];
@@ -126,7 +127,11 @@ class BloqueAleatorio extends Modelo {
         }
     }
 
-    rotar() {
+    rotar(espacio) {
+        var bloquesOriginales = []; //Copia por si fuese necesario deshacer
+        for (var i=0; i<this.bloques.length; i++)
+            bloquesOriginales.push(new Bloque(this.imagenRuta, this.bloques[i].x, this.bloques[i].y));
+
         var xoriginal;
         var yoriginal;
         var pivote = this.bloques[Math.floor(this.size/2)];
@@ -168,7 +173,39 @@ class BloqueAleatorio extends Modelo {
             if (this.bloques[i].y%30==0) {
                 this.bloques[i].y = this.bloques[i].y-15;}
         }
+        for (var i=0; i<this.bloques.length; i++) {
+            if (this.bloques[i].x<300) {
+                //Recolocar bloque completo
+                for (var i=0; i<this.bloques.length; i++) {
+                    this.bloques[i].x+=30;
+                }
+            }
+            if (this.bloques[i].x>600) {
+                //Recolocar bloque completo
+                for (var i=0; i<this.bloques.length; i++) {
+                    this.bloques[i].x-=30;
+                }
+            }
+            if (this.bloques[i].y>600) {
+                //Recolocar bloque completo
+                for (var i=0; i<this.bloques.length; i++) {
+                    this.bloques[i].y-=30;
+                }
+            }
+        }
 
+        //Si tras todas las correciones se superpone con algun bloque apilado, deshacer
+        for (var i=0; i<this.bloques.length; i++) {
+            for (var j=0; j<espacio.estaticos.length; j++) {
+                if (this.bloques[i].colisiona(espacio.estaticos[j])) {
+                    this.eliminarDinamico(espacio);
+                    this.bloques = bloquesOriginales;
+                    this.agregarDinamico(espacio);
+                    return;
+                }
+            }
+        }
     }
+
 }
 

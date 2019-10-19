@@ -129,7 +129,7 @@ class GameLayer extends Layer {
         }
 
         if(controles.rotar == 1) {
-            this.bloqueActual.rotar();
+            this.bloqueActual.rotar(this.espacio);
         }
         controles.rotar = 0;
         if (controles.bajar == 1) {
