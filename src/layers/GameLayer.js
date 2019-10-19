@@ -10,7 +10,6 @@ class GameLayer extends Layer {
         tocaTecho = false;
         this.espacio = new Espacio(25);
         this.bloqueActual = this.generarBloque();
-        //this.espacio.agregarCuerpoDinamico(this.bloqueActual);
         this.bloqueActual.agregarDinamico(this.espacio);
         this.bloques = [];
         this.score = 0;
@@ -19,6 +18,7 @@ class GameLayer extends Layer {
         this.puntos = new Texto(this.score, 765, 30*14+15/2);
         this.lineas = new Texto(this.lines, 765, 30*6+15/2);
         this.level = new Texto(nivelActual,135,30*8+15/2);
+        this.mensaje = new Modelo(imagenes.mensaje_pausa, 900*0.5, 600*0.5);
         this.cargarMapa("./res/"+nivelActual+".txt");
     }
 
@@ -92,7 +92,7 @@ class GameLayer extends Layer {
         this.puntos.dibujar();
         this.lineas.dibujar();
         this.level.dibujar();
-        if ( this.pausa ) {
+        if (this.pausa) {
             this.mensaje.dibujar();
         }
     }
@@ -131,9 +131,13 @@ class GameLayer extends Layer {
     }
 
     procesarControles() {
+        if (controles.pausa) {
+            this.pausa = true;
+        }
+
         if (controles.continuar){
-            controles.continuar = false;
             this.pausa = false;
+            controles.continuar = false;
         }
 
         if (controles.recolectable) {

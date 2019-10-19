@@ -10,7 +10,11 @@ function onKeyDown( event) {
     if ( posicion == -1 ) {
         teclas.push(event.keyCode);
         switch ( event.keyCode ){
+            case 80:
+                controles.pausa = true;
+                break;
             case 32:
+                controles.pausa = false;
                 controles.recolectable = true;
                 controles.continuar = true;
                 break;

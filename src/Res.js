@@ -8,9 +8,8 @@ var imagenes = {
     bloque5 : "res/bloque5.png",
     bloque6 : "res/bloque6.png",
     fondo : "res/fondo.png",
-    boton_pausa : "res/boton_pausa.png",
+    mensaje_pausa : "res/pause.png",
     menu_fondo : "res/menu_fondo.png",
-    boton_jugar : "res/boton_jugar.png",
     mensaje_ganar : "res/mensaje_ganar.png",
     mensaje_perder : "res/mensaje_perder.png",
 };
