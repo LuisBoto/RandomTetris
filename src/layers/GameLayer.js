@@ -61,6 +61,8 @@ class GameLayer extends Layer {
                         this.bloques[i].y=this.bloques[i].y+30;
                     }
                 }
+                this.buscarLineas();
+                return;
             }
             contador=0;
         }
