@@ -7,6 +7,7 @@ class BloqueAleatorio extends Modelo {
         this.bloques = []; //Un bloque estara formado de bloques básicos
         this.direcciones = [];
         this.generarForma(imagenRuta, x, y, size);
+        this.posPivote = this.seleccionarPivote();
     }
 
     estaEnPantalla () {
@@ -134,7 +135,7 @@ class BloqueAleatorio extends Modelo {
 
         var xoriginal;
         var yoriginal;
-        var pivote = this.bloques[Math.floor(this.size/2)];
+        var pivote = this.bloques[this.posPivote];
 
         //Calcularemos el pivote antes
         xoriginal = pivote.x;
@@ -151,7 +152,7 @@ class BloqueAleatorio extends Modelo {
         pivote.y = pivote.y+correcciony;
 
         for (var i=0; i<this.bloques.length; i++) {
-            if (i==Math.floor(this.size/2))
+            if (i==this.posPivote)
                 continue;
 
             xoriginal = this.bloques[i].x;
@@ -212,6 +213,26 @@ class BloqueAleatorio extends Modelo {
                 }
             }
         }
+    }
+
+    seleccionarPivote() {
+        //Haremos la media de las coordenadas de cada mini bloque,
+        //y la posicion del que tenga una coordenada mas centrica
+        //sera devuelta
+        var media= 0;
+        for (var i=0; i<this.bloques.length; i++) {
+            media = media+this.bloques[i].x+this.bloques[i].y;
+        }
+        media = media/this.bloques.length;
+        var diferencia = 100;
+        var res = this.bloques.length/2;
+        for (var i=0; i<this.bloques.length; i++) {
+            if (Math.abs(media - this.bloques[i].x+this.bloques[i].y) < diferencia) {
+                diferencia = Math.abs(media - this.bloques[i].x+this.bloques[i].y);
+                res = i;
+            }
+        }
+        return res;
     }
 
 }
