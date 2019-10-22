@@ -37,13 +37,31 @@ class Espacio {
         }
     }
 
-    actualizar() { // reiniciar choques
+    actualizar() {
+        // reiniciar choques
         for (var i = 0; i < this.dinamicos.length; i++) {
             this.dinamicos[i].choqueAbajo = false;
             this.dinamicos[i].choqueDerecha = false;
             this.dinamicos[i].choqueIzquierda = false;
         }
 
+        //Comprobar fuera de limites
+        for (var i=0; i<this.dinamicos.length; i++) {
+            if (this.dinamicos[i].x < 315) {
+                for (var j = 0; j < this.dinamicos.length; j++) {
+                    this.dinamicos[j].x = this.dinamicos[j].x + 30;
+                    this.dinamicos[j].vx = 0;
+                }
+                return;
+            }
+            if (this.dinamicos[i].x > 585) {
+                for (var j = 0; j < this.dinamicos.length; j++) {
+                    this.dinamicos[j].x = this.dinamicos[j].x - 30;
+                    this.dinamicos[j].vx = 0;
+                }
+                return;
+            }
+        }
         if (!this.comprobarChoqueDerecha()) {
             for (var i = 0; i < this.dinamicos.length; i++) {
                 this.moverDerecha(i);
@@ -168,7 +186,7 @@ class Espacio {
 
     moverDerecha(i) {
         //Derecha
-        if (this.dinamicos[i].x + this.dinamicos[i].ancho/2  >= 600)
+        if (this.dinamicos[i].x == 585)
             return; //No puede moverse pues esta en el limite
         if (this.dinamicos[i].vx > 0) {
             var movimientoPosible = this.dinamicos[i].vx;
@@ -208,7 +226,7 @@ class Espacio {
 
     moverIzquierda(i) {
         // Izquierda
-        if (this.dinamicos[i].x - this.dinamicos[i].ancho/2  <= 300)
+        if (this.dinamicos[i].x == 315)
             return; //No puede moverse pues esta en el limite
         if (this.dinamicos[i].vx < 0) {
             var movimientoPosible = this.dinamicos[i].vx;

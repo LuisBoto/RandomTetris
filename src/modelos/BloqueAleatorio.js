@@ -143,13 +143,13 @@ class BloqueAleatorio extends Modelo {
         //IMPORTANTE usar estas variables
         var xbloque = pivote.x;
         var ybloque = pivote.y;
-        pivote.x = -ybloque;
-        pivote.y = xbloque;
+        //pivote.x = -ybloque;
+        //pivote.y = xbloque;
 
         var correccionx = xoriginal+yoriginal;
         var correcciony = -(xoriginal-yoriginal);
-        pivote.x = pivote.x+correccionx;
-        pivote.y = pivote.y+correcciony;
+        //pivote.x = pivote.x+correccionx;
+        //pivote.y = pivote.y+correcciony;
 
         for (var i=0; i<this.bloques.length; i++) {
             if (i==this.posPivote)
@@ -178,7 +178,7 @@ class BloqueAleatorio extends Modelo {
         }
 
         for (var i=0; i<this.bloques.length; i++) {
-            if (this.bloques[i].x<315) {
+            while (this.bloques[i].x<315) {
                 //Recolocar bloque completo
                 for (var i=0; i<this.bloques.length; i++) {
                     this.bloques[i].x=this.bloques[i].x+30;
@@ -186,11 +186,12 @@ class BloqueAleatorio extends Modelo {
             }
         }
         for (var i=0; i<this.bloques.length; i++) {
-            if (this.bloques[i].x>585) {
+            while (this.bloques[i].x>585) {
                 //Recolocar bloque completo
                 for (var i=0; i<this.bloques.length; i++) {
                     this.bloques[i].x=this.bloques[i].x-30;
                 }
+                i=i-1;
             }
         }
         for (var i=0; i<this.bloques.length; i++) {
@@ -199,6 +200,7 @@ class BloqueAleatorio extends Modelo {
                 for (var i=0; i<this.bloques.length; i++) {
                     this.bloques[i].y=this.bloques[i].y-30;
                 }
+                i=i-1;
             }
         }
 
