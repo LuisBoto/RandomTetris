@@ -13,6 +13,9 @@ class GameLayer extends Layer {
         this.bloqueActual = this.generarBloque();
         this.bloqueActual.agregarDinamico(this.espacio);
         this.bloques = [];
+        this.enemigos = [];
+        this.iteracionesEnemigo = 700;
+        this.iteracionesRecolectable = 500;
         this.score = 0;
         this.lines = 0;
         this.tieneRecolectable = false;
@@ -40,7 +43,26 @@ class GameLayer extends Layer {
             this.iniciar();
         }
 
-        if (!this.tieneRecolectable && this.recolectable == null) {
+        this.iteracionesEnemigo=this.iteracionesEnemigo-1;
+        if(!this.tieneRecolectable)
+            this.iteracionesRecolectable=this.iteracionesRecolectable-1;
+        
+        if (this.iteracionesEnemigo<=0) {
+            this.iteracionesEnemigo = 700;
+            this.enemigos.push(new Enemigo(imagenes.enemigo));
+        }
+        for(var i=0; i<this.enemigos.length; i++) {
+            this.enemigos[i].y = this.enemigos[i].y+4;
+            for (var j=0; j<this.espacio.estaticos.length; j++) {
+                if (this.enemigos[i].colisiona(this.espacio.estaticos[j])) {
+                    this.enemigos.splice(i, 1);
+                    i=i-1;
+                }
+            }
+        }
+
+        if (!this.tieneRecolectable && this.recolectable == null && this.iteracionesRecolectable<=0) {
+            this.iteracionesRecolectable = 500;
             this.crearRecolectable();
         }
 
@@ -137,6 +159,9 @@ class GameLayer extends Layer {
         this.bloqueActual.dibujar();
         if (this.recolectable!=null)
             this.recolectable.dibujar();
+        for (var i = 0; i < this.enemigos.length; i++) {
+            this.enemigos[i].dibujar();
+        }
         if (this.tieneRecolectable)
             new Modelo(imagenes.recolectable, 135, 345).dibujar();
 
