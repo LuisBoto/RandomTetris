@@ -46,7 +46,7 @@ class GameLayer extends Layer {
         this.iteracionesEnemigo=this.iteracionesEnemigo-1;
         if(!this.tieneRecolectable)
             this.iteracionesRecolectable=this.iteracionesRecolectable-1;
-        
+
         if (this.iteracionesEnemigo<=0) {
             this.iteracionesEnemigo = 700;
             this.enemigos.push(new Enemigo(imagenes.enemigo));
@@ -55,6 +55,7 @@ class GameLayer extends Layer {
             this.enemigos[i].y = this.enemigos[i].y+4;
             for (var j=0; j<this.espacio.estaticos.length; j++) {
                 if (this.enemigos[i].colisiona(this.espacio.estaticos[j])) {
+                    this.destruirEnemigo(this.enemigos[i]);
                     this.enemigos.splice(i, 1);
                     i=i-1;
                 }
@@ -92,6 +93,16 @@ class GameLayer extends Layer {
         this.espacio.actualizar();
 
         this.buscarLineas();
+    }
+
+    destruirEnemigo(enemigo) {
+        for (var i=0; i<this.espacio.estaticos.length; i++) {
+            if (Math.abs(enemigo.x - this.espacio.estaticos[i].x)<60
+            && Math.abs(enemigo.y - this.espacio.estaticos[i].y)<60) {
+                this.espacio.estaticos[i].estado = estados.destruyendo;
+                this.espacio.eliminarCuerpoEstatico(this.espacio.estaticos[i]);
+            }
+        }
     }
 
     crearRecolectable() {
