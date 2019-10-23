@@ -12,7 +12,8 @@ var imagenes = {
     menu_fondo : "res/menu_fondo.png",
     mensaje_ganar : "res/mensaje_ganar.png",
     mensaje_perder : "res/mensaje_perder.png",
-    bloque_destruyendose : "res/bloque_destruyendose.png"
+    bloque_destruyendose : "res/bloque_destruyendose.png",
+    recolectable : "res/recolectable.png"
 };
 
 var rutasImagenes = Object.values(imagenes);

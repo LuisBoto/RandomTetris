@@ -15,6 +15,8 @@ class GameLayer extends Layer {
         this.bloques = [];
         this.score = 0;
         this.lines = 0;
+        this.tieneRecolectable = false;
+        this.recolectable = null;
         this.fondo = new Modelo(imagenes.fondo, 900 * 0.5, 600 * 0.5);
         this.puntos = new Texto(this.score, 765, 30*14+15/2);
         this.lineas = new Texto(this.lines, 765, 30*6+15/2);
@@ -38,6 +40,15 @@ class GameLayer extends Layer {
             this.iniciar();
         }
 
+        if (!this.tieneRecolectable && this.recolectable == null) {
+            this.crearRecolectable();
+        }
+
+        if (this.recolectable!=null && this.bloqueActual.colisiona(this.recolectable)) {
+            this.tieneRecolectable = true;
+            this.recolectable = null;
+        }
+
         for (var i =0; i<this.bloques.length; i++) {
             this.bloques[i].actualizar();
             if (this.bloques[i].estado == estados.destruido) {
@@ -59,6 +70,24 @@ class GameLayer extends Layer {
         this.espacio.actualizar();
 
         this.buscarLineas();
+    }
+
+    crearRecolectable() {
+        var x = 315;
+        var mod = Math.floor(Math.random()*10);
+        x = x+(mod*30);
+        var recolec;
+        for (var y=15; y<600; y=y+30) {
+            recolec = new Recolectable(imagenes.recolectable, x, y);
+            for (var j =0; j<this.espacio.estaticos.length; j++) {
+                if (recolec.colisiona(this.espacio.estaticos[j])) {
+                    this.recolectable = new Recolectable(imagenes.recolectable, x, y);
+                    return;
+                }
+            }
+        }
+        this.recolectable = new Recolectable(imagenes.recolectable, x, 585);
+        return;
     }
 
     buscarLineas() {
@@ -106,6 +135,10 @@ class GameLayer extends Layer {
             this.bloques[i].dibujar();
         }
         this.bloqueActual.dibujar();
+        if (this.recolectable!=null)
+            this.recolectable.dibujar();
+        if (this.tieneRecolectable)
+            new Modelo(imagenes.recolectable, 135, 345).dibujar();
 
         // HUD
         this.puntos.dibujar();
@@ -161,6 +194,17 @@ class GameLayer extends Layer {
 
         if (controles.recolectable) {
            //Utilizar recolectable recogido...
+            if (this.tieneRecolectable) {
+                for (var j=0; j<this.bloqueActual.bloques.length; j++) {
+                    this.bloqueActual.bloques[j].estado = estados.destruyendo;
+                }
+                this.bloqueActual.eliminarDinamico(this.espacio);
+                for (var i=0; i<this.bloqueActual.bloques.length; i++)
+                    this.bloques.push(this.bloqueActual.bloques[i]);
+                this.bloqueActual = this.generarBloque();
+                this.bloqueActual.agregarDinamico(this.espacio);
+                this.tieneRecolectable = false;
+            }
         }
 
         if(controles.rotar == 1) {
