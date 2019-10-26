@@ -6,7 +6,7 @@ class GameLayer extends Layer {
     }
 
     iniciar() {
-        //reproducirMusica();
+        reproducirMusica();
         this.limitScore = 500*(nivelActual+1);
         tocaTecho = false;
         this.espacio = new Espacio(25);
@@ -26,6 +26,7 @@ class GameLayer extends Layer {
         this.level = new Texto(nivelActual,135,30*8+15/2);
         this.mensaje = new Modelo(imagenes.mensaje_pausa, 900*0.5, 600*0.5);
         this.cargarMapa("./res/"+nivelActual+".txt");
+        reproducirEfecto(efectos.nivel);
     }
 
     actualizar() {
@@ -141,6 +142,7 @@ class GameLayer extends Layer {
                         this.bloques[i].estado = estados.destruyendo;
                     }
                 }
+                reproducirEfecto(efectos.linea);
                 //Movemos todos los bloques superiores una fila hacia abajo
                 for (var i=0; i<this.bloques.length; i++) {
                     if (this.bloques[i].y < j*30+15) {
