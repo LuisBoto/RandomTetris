@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="052241c5-8c58-4303-b394-025f3cb2096b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/EventosTeclado.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventosTeclado.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layers/GameLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layers/GameLayer.js" afterDir="false" />
-    </list>
+    <list default="true" id="052241c5-8c58-4303-b394-025f3cb2096b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -213,12 +210,12 @@
       <workItem from="1571770585557" duration="5340000" />
       <workItem from="1571833549638" duration="6516000" />
       <workItem from="1572084319299" duration="1740000" />
-      <workItem from="1572086434573" duration="536000" />
+      <workItem from="1572086434573" duration="606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71392000" />
+    <option name="totallyTimeSpent" value="71462000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
