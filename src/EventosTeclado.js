@@ -13,9 +13,11 @@ function onKeyDown( event) {
             case 80:
                 controles.pausa = true;
                 break;
+            case 76:
+                controles.recolectable = true;
+                break;
             case 32:
                 controles.pausa = false;
-                controles.recolectable = true;
                 controles.continuar = true;
                 break;
             case 38:

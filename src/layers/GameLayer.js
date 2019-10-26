@@ -225,12 +225,8 @@ class GameLayer extends Layer {
             this.pausa = true;
         }
 
-        if (controles.continuar){
-            this.pausa = false;
-            controles.continuar = false;
-        }
-
         if (controles.recolectable) {
+            controles.recolectable = false;
            //Utilizar recolectable recogido...
             if (this.tieneRecolectable) {
                 for (var j=0; j<this.bloqueActual.bloques.length; j++) {
@@ -243,6 +239,11 @@ class GameLayer extends Layer {
                 this.bloqueActual.agregarDinamico(this.espacio);
                 this.tieneRecolectable = false;
             }
+        }
+
+        if (controles.continuar){
+            this.pausa = false;
+            controles.continuar = false;
         }
 
         if(controles.rotar == 1) {
